@@ -1,0 +1,9 @@
+#
+# Database setup
+#
+
+# Default values are set up for development
+DATABASE_HOST=127.0.0.1
+DATABASE_PORT=5432
+DATABASE_USER=user
+DATABASE_PASSWORD=1234

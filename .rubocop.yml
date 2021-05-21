@@ -1,0 +1,16 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  DisplayStyleGuide: true
+  Exclude:
+    - 'vendor/**/*'
+    - 'test/fixtures/**/*'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'log/**/*'
+    - 'tmp/**/*'
+    - 'config/environments/**/*'
+    - 'node_modules/**/*'
