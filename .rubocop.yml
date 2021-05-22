@@ -1,3 +1,5 @@
+inherit_from: .rubocop_todo.yml
+
 require:
   - rubocop-rails
   - rubocop-rspec
@@ -14,3 +16,6 @@ AllCops:
     - 'tmp/**/*'
     - 'config/environments/**/*'
     - 'node_modules/**/*'
+
+RSpec/ImplicitExpect:
+  EnforcedStyle: should

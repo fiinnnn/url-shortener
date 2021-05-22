@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Redirect, type: :model do
-  context 'validations' do
+  context 'when validating' do
     subject { build(:redirect) }
 
     it { should validate_presence_of(:source) }
