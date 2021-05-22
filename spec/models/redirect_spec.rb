@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Redirect, type: :model do
   context 'validations' do
+    subject { build(:redirect) }
+
     it { should validate_presence_of(:source) }
     it { should validate_uniqueness_of(:source) }
 

@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe RedirectController, type: :controller do
   context 'redirect does not exist' do
-    it do
-      should rescue_from(ActiveRecord::RecordNotFound).with(:render_not_found)
-    end
+    subject { get :show, :params => { :source => 'invalid' } }
+
+    it { should have_http_status(:not_found) }
   end
 
   context 'redirect exists' do
@@ -12,14 +12,9 @@ describe RedirectController, type: :controller do
       @redirect = create :redirect
     end
 
-    it 'is found' do
-      get :show, :params => { :source => @redirect.source }
-      expect(response).to have_http_status(:found)
-    end
+    subject { get :show, :params => { :source => @redirect.source } }
 
-    it do
-      get :show, :params => { :source => @redirect.source }
-      is_expected.to redirect_to @redirect.target
-    end
+    it { should have_http_status(:found) }
+    it { should redirect_to @redirect.target }
   end
 end
