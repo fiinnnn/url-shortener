@@ -10,18 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_22_142943) do
+ActiveRecord::Schema.define(version: 2021_05_22_164003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "redirects", force: :cascade do |t|
+  create_table "links", force: :cascade do |t|
     t.string "source"
     t.string "target"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["source"], name: "index_redirects_on_source", unique: true
-    t.index ["target"], name: "index_redirects_on_target", unique: true
+    t.index ["source"], name: "index_links_on_source", unique: true
   end
 
 end

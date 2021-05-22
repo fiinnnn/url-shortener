@@ -2,6 +2,8 @@
 
 Rails.application.routes.draw do
   root 'home#index'
-  get '/:source', to: 'redirect#show'
-  post '/', to: 'redirect#new'
+
+  get '/r/:source', to: 'redirect#show'
+
+  resource :links, only: [:create]
 end

@@ -4,8 +4,8 @@ class RedirectController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
   def show
-    redirect = Redirect.find_by!(source: params[:source])
-    redirect_to redirect.target
+    link = Link.find_by!(source: params[:source])
+    redirect_to link.target
   end
 
   private
