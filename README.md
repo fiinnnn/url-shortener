@@ -1,24 +1,48 @@
-# README
+# url-shortener
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![actions](https://github.com/fiinnnn/url-shortener/actions/workflows/test.yml/badge.svg)
+[![codecov](https://codecov.io/gh/fiinnnn/url-shortener/branch/master/graph/badge.svg?token=MFNDULY2AL)](https://codecov.io/gh/fiinnnn/url-shortener)
 
-Things you may want to cover:
+## Installing
 
-* Ruby version
+### Requirements
+Ensure the following dependencies are installed:
+* [rbenv](https://github.com/rbenv/rbenv)
+* [rbenv-vars](https://github.com/rbenv/rbenv-vars)
+* [ruby-build](https://github.com/rbenv/ruby-build)
+* [docker](https://www.docker.com/)
+* [docker-compose](https://docs.docker.com/compose/install/)
 
-* System dependencies
+### Guide
+Install the required ruby version:
+```
+$ rbenv install
+```
 
-* Configuration
+Once it's installed, copy the .rbenv-vars template and edit if necessary:
+```
+$ cp sample.rbenv-vars .rbenv-vars
+```
 
-* Database creation
+Assuming the docker service is already running, start the database container:
+```
+$ docker-compose up -d
+```
 
-* Database initialization
+Now the database can be set up:
+```
+$ rails db:create
+$ rails db:migrate
+```
 
-* How to run the test suite
+Finally rails can be started:
+```
+$ rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Running tests
+This project uses [rspec](https://rspec.info/) for testing.
+If the rspec gem is installed, tests can be run using:
+```
+$ rspec
+```
