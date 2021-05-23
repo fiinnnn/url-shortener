@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Redirects traffic to the full unshortened URL
 class RedirectController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
