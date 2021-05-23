@@ -36,5 +36,13 @@ RSpec.describe 'Links', type: :request do
 
       it { expect(response).to have_http_status(:bad_request) }
     end
+
+    context 'with invalid target URL' do
+      let(:link) { { target: 'invalid' } }
+
+      before { post_link }
+
+      it { expect(response).to have_http_status(:unprocessable_entity) }
+    end
   end
 end

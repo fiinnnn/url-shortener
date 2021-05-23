@@ -5,8 +5,9 @@ export const RequestError = ({errors}) => (
   <div className="mt-2 bg-red-500 text-bold rounded-md px-4 py-2" role="alert">
     {
       Object.keys(errors).map((key) => {
-      return <p><strong>{key}</strong> {errors[key]}</p>
-    })}
+        return <p><strong>{key}</strong> {errors[key]}</p>
+      })
+    }
   </div>
 );
 

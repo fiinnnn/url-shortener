@@ -2,5 +2,5 @@
 
 class Link < ApplicationRecord
   validates :source, presence: true, uniqueness: true
-  validates :target, presence: true
+  validates :target, presence: true, url: true
 end
