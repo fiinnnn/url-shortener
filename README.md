@@ -12,11 +12,19 @@ Ensure the following dependencies are installed:
 * [ruby-build](https://github.com/rbenv/ruby-build)
 * [docker](https://www.docker.com/)
 * [docker-compose](https://docs.docker.com/compose/install/)
+* [node](https://nodejs.org/)
+* [yarn](https://yarnpkg.com/)
 
 ### Guide
 Install the required ruby version:
 ```
 $ rbenv install
+```
+
+Install all required gems and node modules:
+```
+$ bundler install
+$ yarn
 ```
 
 Once it's installed, copy the .rbenv-vars template and edit if necessary:
