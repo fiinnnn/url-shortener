@@ -10,7 +10,7 @@ class Shortener
     end
 
     # create new shortened link otherwise
-    source = source.presence || SecureRandom.base64(6)
+    source = source.presence || SecureRandom.urlsafe_base64(6)
     Link.new(source: source, target: target)
   end
 end

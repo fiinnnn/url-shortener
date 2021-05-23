@@ -30,5 +30,11 @@ RSpec.describe 'Links', type: :request do
       it { expect(response_body['target']).to eq target }
       it { expect(response_body['source']).to eq source }
     end
+
+    context 'with missing parameters' do
+      before { post '/links' }
+
+      it { expect(response).to have_http_status(:bad_request) }
+    end
   end
 end

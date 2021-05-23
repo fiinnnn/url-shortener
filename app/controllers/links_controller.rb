@@ -6,7 +6,7 @@ class LinksController < ApplicationController
   def create
     link = Shortener.call(link_params[:target], link_params[:source])
 
-    render json: { errors: link.errors }, status: :unprocessable_entity unless link.save
+    render json: { errors: link.errors }, status: :unprocessable_entity and return unless link.save
 
     render json: link, status: :created
   end
