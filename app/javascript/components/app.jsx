@@ -52,9 +52,12 @@ class App extends React.Component {
           </h2>
 
           <form onSubmit={this.handleSubmit} className="mt-8 space-y-6" >
-              <input type="text" value={this.state.target} onChange={this.handleChangeTarget} placeholder="Enter a target URL" className="form-input" />
+              <input type="text" value={this.state.target} onChange={this.handleChangeTarget} placeholder="Enter a target URL" className="form-input rounded-md" />
 
-              <input type="txxt" value={this.state.source} onChange={this.handleChangeSource} placeholder="Custom source name (optional)" className="form-input" />
+              <div className="flex relative">
+                <span className="rounded-l-md relative block px-1 py-2 border border-gray-400 bg-gray-300">{window.location.href+"r/"}</span>
+                <input type="text" value={this.state.source} onChange={this.handleChangeSource} placeholder="Custom source name (optional)" className="form-input rounded-r-md" />
+              </div>
 
               <input type="submit" value="Shorten" className="btn btn-primary" />
           </form>
