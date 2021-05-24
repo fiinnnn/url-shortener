@@ -17,5 +17,8 @@ AllCops:
     - 'config/environments/**/*'
     - 'node_modules/**/*'
 
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'context']
+
 RSpec/ImplicitExpect:
   EnforcedStyle: should

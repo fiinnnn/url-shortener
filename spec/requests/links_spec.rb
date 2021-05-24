@@ -15,8 +15,14 @@ RSpec.describe 'Links', type: :request do
       before { post_link }
 
       it { expect(response).to have_http_status(:created) }
-      it { expect(response_body['target']).to eq target }
-      it { expect(response_body['source']).to be_present }
+
+      it 'has the requested target' do
+        expect(response_body['target']).to eq target
+      end
+
+      it 'has a generated source' do
+        expect(response_body['source']).to be_present
+      end
     end
 
     context 'with custom source' do
@@ -27,8 +33,14 @@ RSpec.describe 'Links', type: :request do
       before { post_link }
 
       it { expect(response).to have_http_status(:created) }
-      it { expect(response_body['target']).to eq target }
-      it { expect(response_body['source']).to eq source }
+
+      it 'has the requested target' do
+        expect(response_body['target']).to eq target
+      end
+
+      it 'has the requested source' do
+        expect(response_body['source']).to eq source
+      end
     end
 
     context 'with missing parameters' do

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe 'Redirect', type: :request do
+RSpec.describe 'Redirect', type: :request do
   context 'when redirect does not exist' do
     before { get '/r/invalid' }
 

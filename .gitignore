@@ -44,3 +44,6 @@ yarn-debug.log*
 
 # Ignore local settings
 .rbenv-vars
+
+# Ignore rspec results
+/spec/examples.txt
